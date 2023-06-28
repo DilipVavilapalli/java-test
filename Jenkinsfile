@@ -8,9 +8,9 @@ triggers{
         cron('*/0.10 * * * *')
     }
     stages {
-        stage('Build') {
+        stage('Build1') {
             steps {
-                echo 'Build'
+                echo 'Build1'
                 sh 'mvn package'
             }
         }
@@ -25,7 +25,7 @@ triggers{
 
         stage('Deploy') {
             steps {
-                echo 'Build'
+                echo 'Build1'
 
                 sh "aws lambda update-function-code --function-name $function_name --region us-east-1 --s3-bucket bermtecbatch1996 --s3-key sample-1.0.3.jar"
             }
