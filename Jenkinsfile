@@ -4,7 +4,9 @@ pipeline {
     environment {
         function_name = 'java-sample'
     }
-
+triggers{
+        cron('*/5 * * * *')
+    }
     stages {
         stage('Build') {
             steps {
